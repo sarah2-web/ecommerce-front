@@ -3,7 +3,7 @@
 A fully responsive, interactive **E-Commerce Frontend** built with modern web technologies and integrated with a Laravel backend API.
 
 🔗 **Live Demo:** https://sarah2-web.github.io/ecommerce-front/
-🔗 **Live backend:** https://sarah2-web.github.io/ecommerce-back/
+🔗 **backend:** [https://sarah2-web.github.io/ecommerce-back/](https://github.com/sarah2-web/ecommerce-back)
 
 ---
 
