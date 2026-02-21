@@ -12,15 +12,6 @@ A fully responsive, interactive **E-Commerce Frontend** built with modern web te
 This is the frontend of a full stack e-commerce application that displays products, allows adding to cart, authentication, and communicates with a Laravel API backend.  
 The UI is designed to be clean, user-friendly, and fully responsive on all screen sizes.
 
----
-
-## 📸 Screenshot
-
-<!-- Add screenshots here if you want -->
-![Homepage Preview](./screenshots/homepage.png)
-
----
-
 ## 🧠 Key Features
 
 ✔️ Responsive design (Desktop | Tablet | Mobile)  
