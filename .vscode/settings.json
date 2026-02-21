@@ -1,0 +1,19 @@
+{
+    // "liveServer.settings.port": 5501,
+      "files.autoSave": "afterDelay",
+    "mcpServers": {},
+    "workbench.iconTheme": "material-icon-theme",
+    "codium.codeCompletion.enable": true,
+    "codium.customInstructions.allMessages": "",
+    "codium.customInstructions.specificCommands": {},
+    "codium.editorButton": true,
+    "codium.rag.maxLocalSnippets": 5,
+    "codium.rag.maxRemoteSnippets": 5,
+    "codium.terminalAllowedCommands": [],
+    "codium.terminalBlockedCommands": [],
+    "codium.commitMessage.format": "",
+    "editor.tabCompletion": "on",
+      "editor.suggestSelection": "first",
+      "liveServer.settings.port": 5501,
+    
+}

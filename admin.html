@@ -1,0 +1,217 @@
+<!-- admin.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+    <title>admin sarah</title>
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <ul>
+                      <li class="profile-summary">
+                <div class="photo">
+                    <img id="Avatar" src="" alt="Avatar">
+                </div>
+                <h2 id="DisplayName">User Name</h2>
+                <button id="editProfileBtn" class="edit-btn">
+                    <i class="fa-solid fa-pen"></i> Edit Profile
+                </button>
+            </li>
+               <!-- ✅ المودال المخفي -->
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Edit Profile</h2>
+            <form id="profileForm">
+                <img id="ModalAvatar" src="" alt="Avatar">
+                <input type="file" id="avatarInput" accept="image/*">
+                
+                <input type="text" id="Name" placeholder="Name">
+                <input type="text" id="Phone" placeholder="Phone">
+                <input type="text" id="Address" placeholder="Address">
+                <input type="date" id="birthdate">
+                
+                <button type="button" id="saveProfileBtn">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+            <!-- أدوات المستخدم -->
+                <li>
+                    <a onclick="showPage('dashboard')">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <p>dashboard</p>
+                    </a>
+                </li>
+                <li>
+                    <a onclick="showPage('products')">
+                        <i class="fa-solid fa-shirt"></i>
+                        <p>manage products</p>
+                    </a>
+                </li>
+                <li>
+                    <a onclick="showPage('orders')">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <p>manage orders</p>
+                    </a>
+                </li>
+                <li>
+                    <a onclick="showPage('users')">
+                        <i class="fa-solid fa-users"></i>
+                        <p>customers</p>
+                    </a>
+                </li>
+                <li>
+                    <div class="logout">
+                        <button id="adminLogoutBtn" class="log-out">
+                            <i class="fa-solid fa-sign-out"></i>
+                            <p>log out</p>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <!-- DASHBOARD -->
+             <div id="dashboard" class="page active">
+                <h1>Dashboard</h1>
+            <!-- DASHBOARD -->
+             <div class="indicators">
+    <div class="indicator">
+        <div class="iconcard">
+        <i class="fa-solid fa-shirt"></i>
+        </div>
+        <div class="indicator-content">
+            <h4>Products</h4>
+            <p>120</p>
+        </div>
+    </div>
+    <div class="indicator">
+        <div class="iconcard">
+        <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        <div class="indicator-content">
+        <h4>Orders Today</h4>
+        <p>15</p>
+        </div>
+    </div>
+    <div class="indicator">
+        <div class="iconcard">
+        <i class="fa-solid fa-dollar-sign"></i>
+        </div>
+        <div class="indicator-content">
+        <h4>Revenue</h4>
+        <p>$4,200</p>
+        </div>
+    </div>
+    <div class="indicator">
+        <div class="iconcard">
+        <i class="fa-solid fa-users"></i>
+        </div>
+        <div class="indicator-content">
+        <h4>New Customers</h4>
+        <p>10</p>
+        </div>
+    </div>
+</div>
+                <!-- مؤشرات -->
+                 <div class="charts">
+                 <div class="chart-container" style="margin-top:40px;">
+    <h2>Sales monthly</h2>
+    <canvas id="salesChart"></canvas>
+</div>
+<!--  -->
+            <div class="chart-containe" style="margin-top:40px;">
+    <h2>Sales yearly</h2>
+    <canvas id="saleChart"></canvas>
+</div>
+</div>
+            </div>
+
+            <!-- PRODUCTS -->
+             <div id="productModal" class="modal">
+  <div class="modal-box">
+    <h2 id="modalTitle">Add Product</h2>
+    <input type="hidden" id="productId">
+    <input type="text" id="pName" placeholder="Product Name">
+    <input type="number" id="pPrice" placeholder="Price">
+    <input type="number" id="pStock" placeholder="Stock">
+    <input type="text" id="pSize" placeholder="Size">
+    <input type="file" id="pImage">
+    <div class="modal-actions">
+      <button onclick="saveProduct()" id="btn" class="btn">Save</button>
+      <button onclick="closeModal()" class="btn delete">Cancel</button>
+    </div>
+  </div>
+</div>
+<!--  -->
+             <div id="products" class="page">
+    <div class="page-header">
+        <h1>Products</h1>
+        <button class="btn add-btn">+ Add Product</button>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Size</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Products -->
+        </tbody>
+    </table>
+</div>
+
+            <!-- ORDERS -->
+             <div id="orders" class="page">
+    <h1>Orders</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Total</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="orders-tbody"></tbody>
+    </table>
+</div>
+
+            <!-- USERS -->
+             <div id="users" class="page">
+    <h1>Customers</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Orders</th>
+                <th>phone</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+            
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

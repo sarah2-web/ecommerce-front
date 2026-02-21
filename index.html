@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FashionHub - Your Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- الشعار -->
+            <div class="logo">
+                <i class="fas fa-tshirt"></i>
+                <span>Fashion<span>Hub</span></span>
+            </div>
+
+            <!-- الروابط الرئيسية -->
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link" id="active">Home</a></li>
+                <li><a href="#products" class="nav-link">Products</a></li>
+                <li class="dropdown">
+                    <a href="#categories" class="nav-link dropdown-toggle">Categories <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Men's Clothing</a>
+                        <a href="#" class="dropdown-item">Women's Clothing</a>
+                        <a href="#" class="dropdown-item">Kid's Clothing</a>
+                        <a href="#" class="dropdown-item">accessories</a>
+                    </div>
+                </li>
+                <li><a href="#deals" class="nav-link">Deals</a></li>
+                <li><a href="#contact" class="nav-link">contact</a></li>
+                </ul>
+            <!-- أدوات المستخدم -->
+            <div class="nav-tools">
+                <!-- البحث -->
+                <div class="search-box">
+                    <input type="text" placeholder="search products..." class="search-input">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+
+
+                <!-- السلة -->
+    <div class="cart-icon" id="cartIcon">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="cart-count" id="cartCount">0</span>
+</div>
+
+<!-- Overlay عند فتح Cart -->
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<!-- Sidebar Cart -->
+<div class="cart-dropdown" id="cartDropdown">
+    <button class="close-btn" id="closeCart">&times;</button>
+    <ul class="cart-items" id="cartItems"></ul>
+    <div class="cart-footer">
+        <strong id="cartTotal">Total: $0</strong>
+        <button class="checkout-btn">Checkout</button>
+    </div>
+</div>
+
+<!-- Navbar Profile -->
+<div class="navbar-profile" id="navbarProfile">
+    <img id="Avatar" src="/storage/avatars/no-avatar.jpg" alt="Avatar">
+    <span id="DisplayName">User</span>
+</div>
+
+<!-- المودال -->
+<div id="profileModal" class="modal">
+    <div class="modals-content">
+        <span class="closes-btn">&times;</span>
+        <h1>Edit Profile</h1>
+        <form id="profileForm">
+            <img id="ModalAvatar" src="" alt="Avatar">
+            <input type="file" id="avatarInput" accept="image/*">
+            
+            <input type="text" id="Name" placeholder="Name">
+            <input type="text" id="Phone" placeholder="Phone">
+            <input type="text" id="Address" placeholder="Address">
+            <input type="date" id="birthdate">
+            
+            <button type="button" id="saveProfileBtn">Save Changes</button>
+        </form>
+    </div>
+</div>
+                 
+                <button class="user-btn" id="authBtn">
+                    <i class="fas fa-user"></i>
+                    <span id="authText">signin</span>
+                </button>
+            </div>
+
+            <!-- زر القائمة للجوال -->
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- المحتوى -->
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Discover Your Unique Style</h1>
+            <p>Premium fashion collection for everyone</p>
+            <a href="#products" class="cta-button">Shop Now</a>
+        </div>
+        <div class="hero-image">
+            <img src="clothes.jfif" alt="Fashion Model">
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories">
+        <div class="container" id="container">
+            <h2>Shop by Category</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <img src="men clothes.jpg" alt="Men">
+                    <h3>Men's Collection</h3>
+                    <button class="btn-primary">Explore</button>
+                </div>
+                <div class="category-card">
+                    <img src="women clothes.webp" alt="Women">
+                    <h3>Women's Collection</h3>
+                    <button class="btn-primary">Explore</button>
+                </div>
+                <div class="category-card">
+                    <img src="kids.jpg" alt="Kids">
+                    <h3>Kids' Collection</h3>
+                    <button class="btn-primary">Explore</button>
+                </div>
+                <div class="category-card">
+                    <img src="accessories.jfif" alt="Accessories">
+                    <h3>Accessories</h3>
+                    <button class="btn-primary">Explore</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+   <section id="products" class="products">
+    <div class="container">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            <!-- المنتجات هتظهر هنا عن طريق JS -->
+        </div>
+    </div>
+</section>
+
+
+    <!-- Deals Section -->
+    <section id="deals" class="deals">
+        <div class="container">
+            <h2>Special Deals</h2>
+            <div class="deal-banner">
+                <h3>Summer Sale - Up to 50% OFF!</h3>
+                <p>Limited time offer on selected items</p>
+                <button class="btn-secondary">Shop Sale</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-content">
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" class="form-input" required>
+                    <input type="email" placeholder="Your Email" class="form-input" required>
+                    <textarea placeholder="Your Message" class="form-textarea" required></textarea>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Fashion Street, New York</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@fashionhub.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 FashionHub. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

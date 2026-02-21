@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Sign In & Register</title>
+    <link rel="stylesheet" href="signin.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sign In Form -->
+        <div class="form-container sign-in-container">
+            <form id="signInForm">
+                <h1>Sign In</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your account</span>
+                <input type="email" placeholder="Email" id="signinEmail" required />
+                <div class="password-container">
+                    <input type="password" placeholder="Password" id="signinPassword" required />
+                    <!-- <i class="fas fa-eye toggle-password"></i> -->
+                </div>
+                <a href="#" class="forgot-password">Forgot your password?</a>
+                <button type="submit" class="submit-btn">Sign In</button>
+            </form>
+        </div>
+
+        <!-- Register Form -->
+        <div class="form-container sign-up-container">
+            <form id="signUpForm">
+                <h1>Create Account</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email for registration</span>
+                <input type="text" placeholder="Name" id="signupName" required />
+                <input type="email" placeholder="Email" id="signupEmail" required />
+                <div class="password-container">
+                    <input type="password" placeholder="Password" id="signupPassword" required />
+                    <!-- <i class="fas fa-eye toggle-password"></i> -->
+                </div>
+                <div class="password-container">
+                    <input type="password" placeholder="Confirm Password" id="signupConfirmPassword" required />
+                    <span class="match-indicator"></span>
+                </div>
+                <button type="submit" class="submit-btn">Sign Up</button>
+            </form>
+        </div>
+
+        <!-- Overlay -->
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signInBtn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start your journey with us</p>
+                    <button class="ghost" id="signUpBtn">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Font Awesome for icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="signin.js"></script>
+</body>
+</html>

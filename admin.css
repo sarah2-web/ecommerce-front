@@ -1,0 +1,521 @@
+/* admin.css - تصميم مظبوط */
+
+/* ---------- الألوان الرئيسية ---------- */
+:root {
+    --sidebar-text: #ecf0f1;     /* لون الكتابة في الشريط */
+    --accent-color: #3498db;     /* لون الأيقونات والعناوين */
+    --content-bg: #f8f9fa;       /* خلفية المحتوى */
+    --card-bg: #ffffff;          /* خلفية الكروت */
+    --text-dark: #2c3e50;        /* نص غامق */
+    --text-light: #7f8c8d;       /* نص فاتح */
+}
+
+/* ---------- إعادة الضبط ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--content-bg);
+}
+
+/* ---------- الحاوية الرئيسية ---------- */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ---------- الشريط الجانبي (Menu) ---------- */
+.menu {
+    width: 250px;
+    /* background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); */
+    background: linear-gradient(135deg, #F5F5DC,#D2B48C,#E5E4E2);
+    padding: 0;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu li {
+    margin: 0;
+}
+
+/* رابط الـ menu */
+.menu a {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    color: #333333;
+    text-decoration: none;
+    transition: all 0.3s ease; /* هوفر ناعم */
+    border-left: 3px solid transparent;
+    cursor: pointer;
+}
+
+/* تأثير hover للـ menu */
+.menu a:hover {
+   background:linear-gradient(45deg,#707751,#3B3C23);
+    color: #ead7bf;
+    border-left: 3px solid #1f25a3;
+}
+
+
+.menu i {
+    margin-right: 15px;
+    width: 20px;
+    font-size: 18px;
+    color: #3B3C23; 
+}
+
+.menu p {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* ---------- ملف المستخدم ---------- */
+.profile {
+    text-align: center;
+    padding: 25px 20px;
+    /* background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); */
+    background: linear-gradient(135deg, #F5F5DC,#D2B48C,#E5E4E2);
+    margin-bottom: 20px;
+}
+
+.photo img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgb(15, 74, 15);
+}
+
+.profile h2 {
+    margin-top: 15px;
+    font-size: 20px;
+    color: #333333;
+}
+
+/* ---------- زر الخروج ---------- */
+.logout button {
+    position: absolute;
+    display: flex;
+    border: none;
+    bottom: 0;
+    width: 248px;
+    left: 1px;
+    border-bottom: none;
+    padding: 15px 25px;
+    background-color: #D2B48C;
+    transition: all 0.3s ease; /* هوفر ناعم */
+    border-left: 3px solid transparent;
+    cursor: pointer; 
+}
+
+.logout button:hover {
+    background-color: #c0392b;
+    border-left: 3px solid #e74c3c;
+}
+
+/* ---------- منطقة المحتوى ---------- */
+.content {
+    flex: 1;
+    padding: 30px;
+    background-color: var(--content-bg);
+    /* background: linear-gradient(135deg, #F5F5DC,#D2B48C,#E5E4E2); */
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* ---------- كروت الـ Dashboard ---------- */
+.indicators {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.indicator {
+    display: flex; /* ترتيب الأيقونة بجانب النصوص */
+    align-items: center; /* محاذاة سنتر عمودياً */
+    /* background: #3498db; */
+    background: #4e5025;
+    color: #F5F5DC;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+/* حاوية الأيقونة */
+.indicator .iconcard {
+    flex-shrink: 0; /* منع الأيقونة من الانضغاط */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin-right: 15px; /* مسافة بين الأيقونة والنص */
+    padding: 0; /* إلغاء أي بادينج قديم */
+}
+
+.indicator i {
+    font-size: 40px;
+}
+
+/* حاوية النصوص لترتيبها فوق بعضها */
+.indicator-text {
+    display: flex;
+    flex-direction: column; /* ترتيب h4 و p فوق بعض */
+    overflow: hidden; /* لمنع النص الطويل من تخريب التصميم */
+}
+
+.indicator h4 {
+    font-size: 12px;
+    text-transform: uppercase;
+    margin: 0;
+    opacity: 0.9;
+    white-space: nowrap; /* منع انقسام السطر */
+}
+
+.indicator p {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 5px 0 0 0;
+}
+
+.indicator:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(39, 38, 38, 0.2);
+}
+/* ---------- products---------- */
+.page-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.table{
+    margin-top: 20px;
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+}
+
+.table th, .table td{
+    padding:12px;
+    border-bottom:1px solid #eee;
+    text-align:left;
+}
+
+.table img{
+    width:40px;
+    height:40px;
+    object-fit:cover;
+    border-radius:6px;
+}
+
+.btn{
+    border:none;
+    padding:6px 12px;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:14px;
+}
+
+.add-btn{
+    background:#27ae60;
+    color:white;
+}
+
+.edit{
+    background:#3498db;
+    color:white;
+}
+
+.delete{
+    background:#e74c3c;
+    color:white;
+}
+/* orders---------- */
+.status{
+    padding:5px 10px;
+    border-radius:12px;
+    font-size:13px;
+    color:white;
+}
+
+.pending{
+    background:#f39c12;
+}
+
+.completed{
+    background:#2ecc71;
+}
+/* مؤشرات الرسم البياني */
+.charts{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+    margin-top:40px;
+}
+.chart-container{
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.chart-container h2{
+    font-size:18px;
+    margin-bottom:15px;
+}
+.chart-container canvas{
+    width:100% !important;
+    height:23x !important;
+}
+/*  */
+.chart-containe{
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.chart-containe h2{
+    font-size:18px;
+    margin-bottom:15px;
+}
+.chart-containe canvas{
+    width:100% !important;
+    height:230x !important;
+}
+/*  */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-box {
+  background: #fff;
+  padding: 20px;
+  width: 350px;
+  border-radius: 10px;
+}
+
+.modal-box input {
+  width: 100%;
+  margin: 8px 0;
+  padding: 8px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+}
+.modal-actions #btn{
+    background-color: #2ecc71;
+}
+/* statues---------- */
+.status.pending { color: #ffffff; font-weight: bold;}
+.status.completed { color: green; font-weight: bold; }
+.status.processing { color: blue; font-weight: bold; }
+.status.cancelled { color: red; font-weight: bold; }
+
+
+
+
+/* ===== عرض البروفايل المختصر ===== */
+.profile-summary {
+    text-align: center;
+    padding: 20px 15px;
+    border-bottom: 1px solid #334155;
+    margin-bottom: 15px;
+}
+
+.profile-summary .photo {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #3b82f6;
+}
+
+#Avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+#DisplayName {
+    color: #494a4b;
+    font-size: 18px;
+    margin: 0 0 12px 0;
+    font-weight: 600;
+}
+
+.edit-btn {
+    background: #4e5025;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.3s ease;
+}
+.edit-btn i {
+    color: #8e8b8b;
+}
+
+.edit-btn:hover {
+    background: #2563eb;
+}
+
+/* ===== روابط القائمة ===== */
+
+
+/* ===== زر الخروج ===== */
+.menu li:last-child {
+    margin-top: auto;
+    padding: 15px 20px;
+    border-top: 1px solid #334155;
+}
+
+
+/* ===== المودال ===== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    animation: modalSlide 0.3s ease;
+}
+
+@keyframes modalSlide {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #64748b;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #1e293b;
+}
+
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1e293b;
+}
+
+/* ===== نموذج التعديل ===== */
+#profileForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#ModalAvatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px;
+    border: 3px solid #e2e8f0;
+}
+
+#avatarInput {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    background: #f8fafc;
+    cursor: pointer;
+}
+
+#profileForm input {
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+#profileForm input:focus {
+    outline: none;
+    border-color: #3b82f6;
+}
+
+#saveProfileBtn {
+    padding: 12px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+#saveProfileBtn:hover {
+    background: #2563eb;
+}
